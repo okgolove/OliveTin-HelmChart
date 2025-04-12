@@ -1,0 +1,4 @@
+validate-chart-schema: false
+validate-maintainers: false
+validate-yaml: true
+exclude-deprecated: true
