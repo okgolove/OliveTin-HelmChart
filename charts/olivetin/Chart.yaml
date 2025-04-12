@@ -11,9 +11,9 @@ maintainers:
 
 type: application
 
-version: 0.3.0
+version: 1.0.0
 
-appVersion: "latest"
+appVersion: "2025.4.8"
 
 keywords:
   - olivetin
