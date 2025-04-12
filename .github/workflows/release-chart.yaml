@@ -8,12 +8,14 @@ on:
       - "charts/**"
 
 jobs:
-  release:
+  chart-release:
     # if: github.repository == 'OliveTin/OliveTin-HelmChart'
     if: github.repository == 'okgolove/OliveTin-HelmChart'
+
+    runs-on: ubuntu-latest
     permissions:
       contents: write
-    runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -30,3 +32,5 @@ jobs:
 
       - name: Run chart-releaser
         uses: helm/chart-releaser-action@v1.7.0
+        env:
+          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
