@@ -9,8 +9,8 @@ on:
 
 jobs:
   release:
-    # if: github.repository == 'OliveTin/OliveTin-HelmChart/'
-    if: github.repository == 'okgolove/OliveTin-HelmChart/'
+    # if: github.repository == 'OliveTin/OliveTin-HelmChart'
+    if: github.repository == 'okgolove/OliveTin-HelmChart'
     permissions:
       contents: write
     runs-on: ubuntu-latest
