@@ -26,6 +26,14 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+      - name: Import GPG Key
+        uses: crazy-max/ghaction-import-gpg@v4.1.0
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+
+      - name: Export GPG to Legacy
+        run: gpg --export-secret-keys > ~/.gnupg/pubring.gpg
+
       - name: Install Helm
         uses: azure/setup-helm@v4
 
@@ -33,3 +41,6 @@ jobs:
         uses: helm/chart-releaser-action@v1.7.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CR_KEY: James Read (OliveTin HelmChart Signing Key) <contact@jread.com>
+          CR_KEYRING: ~/gnupg/pubring.gpg
+          CR_SIGN: true
