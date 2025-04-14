@@ -2,8 +2,10 @@ name: Release Charts
 
 on:
   push:
-    tags:
-      - '*'
+    branches:
+      - main
+    paths:
+      - "charts/**"
 
 jobs:
   chart-release:
