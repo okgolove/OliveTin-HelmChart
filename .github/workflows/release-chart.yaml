@@ -42,5 +42,5 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_KEY: James Read (OliveTin HelmChart Signing Key) <contact@jread.com>
-          CR_KEYRING: ~/gnupg/pubring.gpg
+          CR_KEYRING: ~/.gnupg/pubring.gpg
           CR_SIGN: true
