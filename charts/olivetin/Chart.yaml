@@ -13,7 +13,7 @@ type: application
 
 version: 2.1.0
 
-appVersion: "2025.4.8"
+appVersion: 2025.4.8
 
 keywords:
   - olivetin
