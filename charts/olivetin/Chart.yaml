@@ -11,9 +11,9 @@ maintainers:
 
 type: application
 
-version: 2.2.4
+version: 3.0.0
 
-appVersion: "2025.4.8"
+appVersion: "2025.6.6"
 
 annotations:
   artifacthub.io/signKey: |
