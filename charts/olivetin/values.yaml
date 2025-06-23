@@ -66,12 +66,12 @@ livenessProbe:
   initialDelaySeconds: 5
   periodSeconds: 20
   httpGet:
-    path: /api/readyz
+    path: /readyz
     port: http
 readinessProbe:
   periodSeconds: 20
   httpGet:
-    path: /api/readyz
+    path: /readyz
     port: http
 
 # Additional volumes on the output Deployment definition.
