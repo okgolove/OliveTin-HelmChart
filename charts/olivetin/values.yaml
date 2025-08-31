@@ -87,6 +87,11 @@ extraVolumeMounts: []
 #   mountPath: "/etc/foo"
 #   readOnly: true
 
+initContainers: []
+# - name: do-something-at-startup
+#   image: busybox
+#   command: ['sh', '-c', 'echo "Doing something at startup"']
+
 nodeSelector: {}
 
 tolerations: []
