@@ -1,3 +1,4 @@
+---
 name: Release Charts
 
 on:
@@ -31,8 +32,11 @@ jobs:
         with:
           gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
 
-      - name: Export GPG to Legacy
-        run: gpg --export-secret-keys > ~/.gnupg/pubring.gpg
+      - name: List secret keys
+        run: gpg --batch --list-secret-keys --keyid-format=long
+
+      #- name: Export GPG to Legacy
+      #  run: gpg --export-secret-keys > ~/.gnupg/pubring.gpg
 
       - name: Install Helm
         uses: azure/setup-helm@v4
@@ -42,5 +46,5 @@ jobs:
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_KEY: James Read (OliveTin HelmChart Signing Key) <contact@jread.com>
-          CR_KEYRING: ~/.gnupg/pubring.gpg
+          CR_KEYRING: "$HOME/.gnupg/pubring.kbx"
           CR_SIGN: true
