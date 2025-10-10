@@ -64,7 +64,6 @@ spec:
         - name: config
           configMap:
             name: {{ include "olivetin.fullname" . }}-config
-            readOnly: true
       {{- with .Values.extraVolumes }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
